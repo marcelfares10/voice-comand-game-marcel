@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <title> Jogo da Adinhação</title>
+  </head>
+  <body>
+    <h1 class = 'name'></h1>
+    <h1>Adivinhe o número que eu pensei</h1>
+    <h3>
+      O número está entre <span id="lower-value">0</span> e
+      <span id="highest-value">100</span>
+    </h3>
+    <div id="guess" class="message">
+      <!--<div>Você disse:</div>
+        <span class="box">20</span>
+        <div>O número secreto é maior <i class="fa-solid fa-arrow-up-long"></i></div>-->
+    </div>
+    <script src="sortearNumero.js"></script>
+    <script src="reconhedimentoVoz.js"></script>
+    <script src="validacao.js"></script>
+  </body>
+</html>
+
+<script>
+  Swal.fire({
+    title: "Seja bem-vindo!",
+    text: "Digite seu nome:",
+    input: 'text',
+    showCancelButton: true        
+  }).then((result) => {
+  if (result.value) {
+    $(".name").html("Olá, " + result.value + "!").append(` <i class="far fa-smile-wink"></i>`)
+  }else
+    $(".name").html("Olá, visitante").append(` <i class="far fa-smile-wink"></i>`)
+});
+</script>
